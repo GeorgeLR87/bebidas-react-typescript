@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Layout from "./layouts/Layout"
 const IndexPage = lazy(() => import("./views/IndexPage"))
 const FavoritePage = lazy(() => import("./views/FavoritePage"))
+const GenerateAI = lazy(() => import("./views/GenerateAI"))
 
 export default function AppRuter() {
     return (
@@ -17,6 +18,11 @@ export default function AppRuter() {
                     <Route path="/favoritos" element={
                         <Suspense fallback="Cargando...">
                             <FavoritePage />
+                        </Suspense>
+                    } />
+                    <Route path="/generate" element={
+                        <Suspense fallback="Cargando...">
+                            <GenerateAI />
                         </Suspense>
                     } />
                 </Route>
